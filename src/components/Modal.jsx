@@ -1,14 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Message from './Message'
 import closeImgModal from '../img/cerrar.svg'
 
 
-function Modal({ setModal, animationModal, setAnimationModal, changeBill}) {
+function Modal({ setModal, animationModal, setAnimationModal, changeBill, billEdit}) {
   const [message, setMessage] = useState('')
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const [category, setCategory] = useState('')
 
+  useEffect(() => {
+    if (Object.keys(billEdit).length > 0) {
+      setName(billEdit.name)
+      setAmount(billEdit.amount)
+      setCategory(billEdit.category)
+    }
+  }, [])
 
   const closeModal = () => {
     setAnimationModal(false)
