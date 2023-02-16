@@ -334,6 +334,15 @@ main {
     width: 10rem;
 }
 
+@media (max-width: 768px) {
+    .contenido-gasto img {
+        width: 7rem;
+    }
+    .sombra{
+        padding: 2rem;
+    }
+}
+
 .descripcion-gasto p {
     margin: 0 0 0.3rem 0;
 }
