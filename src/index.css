@@ -12,10 +12,12 @@ body {
     font-family: "Lato", sans-serif;
     background-color: var(--gris-claro);
 }
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -30,6 +32,7 @@ html {
 h1 {
     font-size: 4rem;
 }
+
 h2 {
     font-size: 3rem;
 }
@@ -61,12 +64,14 @@ header h1 {
     margin: 0 auto;
     padding: 10rem 0;
 }
+
 @media (min-width: 768px) {
     .formulario {
         padding: 5rem 0;
         width: 60rem;
     }
 }
+
 .formulario legend {
     font-size: 3.6rem;
     text-align: center;
@@ -75,8 +80,10 @@ header h1 {
     color: var(--blanco);
     margin-bottom: 4rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--azul);
+    border-bottom: 2px solid var(--blanco);
+    font-weight: bold;
 }
+
 .formulario .campo {
     display: grid;
     margin-bottom: 2rem;
@@ -98,6 +105,7 @@ header h1 {
     flex: 1;
     font-size: 1.6rem;
 }
+
 .formulario input[type="submit"] {
     background-color: #1048a4;
     border: none;
@@ -111,12 +119,14 @@ header h1 {
     width: 100%;
     transition: background-color 300ms ease;
 }
+
 @media (min-width: 768px) {
     .formulario input[type="submit"] {
         display: block;
         padding: 1rem 5rem;
     }
 }
+
 .formulario input[type="submit"]:hover {
     background-color: #042a67;
     cursor: pointer;
@@ -140,19 +150,27 @@ header h1 {
     font-size: 1.8rem;
     text-align: center;
 }
+
+@media (max-width: 425px) {
+    .alerta {
+        padding: 2rem 2rem;
+    }
+}
+
 .alerta.error {
     background-color: var(--blanco);
     border-left: 5px solid #b91c1c;
     color: #b91c1c;
 }
-.alerta.success {
-}
+
+.alerta.success {}
 
 .contenedor {
     width: 90%;
     max-width: 80rem;
     margin: 0 auto;
 }
+
 .contenedor-presupuesto {
     margin-top: -5rem;
 
@@ -162,29 +180,44 @@ header h1 {
 
     transform: translateY(5rem);
 }
+
 .dos-columnas {
     flex-direction: column;
 }
+
 .dos-columnas :first-child {
     margin-bottom: 4rem;
 }
+
 @media (min-width: 768px) {
     .dos-columnas {
         flex-direction: row;
         align-items: center;
         gap: 4rem;
     }
-    .dos-columnas > div {
+
+    .dos-columnas>div {
         width: 50%;
     }
+
     .dos-columnas :first-child {
         margin-bottom: 0;
     }
 }
-.formulario input[type="text"].nuevo-presupuesto, 
+
+.formulario input[type="text"].nuevo-presupuesto,
 .formulario input[type="number"].nuevo-presupuesto {
     font-size: 2.8rem;
     text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (max-width: 425px) {
+    .formulario input[type="text"].nuevo-presupuesto,
+    .formulario input[type="number"].nuevo-presupuesto {
+        font-size: 2rem;
+    }
 }
 
 .contenedor-presupuesto svg {
@@ -194,25 +227,30 @@ header h1 {
 .contenido-presupuesto {
     width: 100%;
 }
+
 .contenido-presupuesto p {
     font-weight: 400;
     color: var(--gris-oscuro);
     font-size: 2.4rem;
     text-align: center;
 }
+
 @media (min-width: 768px) {
     .contenido-presupuesto p {
         text-align: left;
     }
 }
+
 .contenido-presupuesto p.negativo,
 .contenido-presupuesto p.negativo span {
     color: red;
 }
+
 .contenido-presupuesto span {
     font-weight: 900;
     color: var(--azul);
 }
+
 .reset-app {
     border: none;
     background-color: #db2777;
@@ -226,6 +264,7 @@ header h1 {
     transition-property: background-color;
     transition-duration: 300ms;
 }
+
 .reset-app:hover {
     background-color: #c71465;
     cursor: pointer;
@@ -240,11 +279,13 @@ main {
     align-items: center;
     gap: 2rem;
 }
+
 .filtros label {
     font-size: 3rem;
     font-weight: 900;
     color: var(--gris-oscuro);
 }
+
 .filtros select {
     flex: 1;
     padding: 1rem;
@@ -257,10 +298,12 @@ main {
 .listado-gastos {
     margin-top: 5rem;
 }
+
 .listado-gastos h2 {
     color: var(--gris-oscuro);
     font-weight: 900;
 }
+
 .no-gastos {
     text-align: center;
     font-size: 2.2rem;
@@ -294,28 +337,34 @@ main {
 .descripcion-gasto p {
     margin: 0 0 0.3rem 0;
 }
+
 .descripcion-gasto .categoria {
     color: var(--gris);
     font-size: 1.6rem;
     font-weight: 900;
     text-transform: uppercase;
 }
+
 .descripcion-gasto p {
     margin-bottom: 1rem;
 }
+
 .descripcion-gasto .nombre-gasto {
     color: var(--gris-oscuro);
     font-size: 2.4rem;
     font-weight: 700;
 }
+
 .descripcion-gasto .nombre-gasto:hover {
     cursor: pointer;
 }
+
 .descripcion-gasto .fecha-gasto {
     font-size: 1.8rem;
     font-weight: 900;
     color: var(--gris-oscuro);
 }
+
 .descripcion-gasto .fecha-gasto span {
     font-weight: 400;
 }
@@ -329,25 +378,32 @@ main {
 .nuevo-gasto img {
     width: 5rem;
 }
+
 .nuevo-gasto img:hover {
     cursor: pointer;
 }
 
 .modal {
     position: absolute;
-    background-color: rgb(0 0 0 / 0.92);
+    background-color: rgb(0 0 0 / 0.9);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    display: flex;
+    align-items: center;
 }
+
 .modal .cerrar-modal {
     position: absolute;
-    right: 3rem;
-    top: 3rem;
+    right: 2rem;
+    top: 2rem;
     width: 3rem;
     height: 3rem;
+    cursor: pointer;
+    z-index: 100;
 }
+
 .modal .cerrar-modal img {
     width: 100%;
 }
@@ -360,9 +416,11 @@ main {
     transition-timing-function: ease-in;
     opacity: 0;
 }
+
 .modal label {
-    color: var(--blanco);
+    color: var(--negro);
 }
+
 body .modal {
     overflow: hidden;
 }
@@ -370,8 +428,22 @@ body .modal {
 .modal .formulario.animar {
     position: relative;
     opacity: 1;
+    background-color: var(--azul);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+@media (max-width: 425px) {
+    .modal .formulario.animar {
+        width: 90%;
+    }
+}
+
+.contenedor-modal{
+    width: 80%;
+}
 .modal .formulario.cerrar {
     opacity: 0;
 }
