@@ -26,10 +26,18 @@ function App() {
   }, [billEdit])
 
   const changeBill = bill => {
-    bill.id = generateId()
-    bill.date = Date.now()
-    setBills([...bills, bill])
-
+    if(bill.id){
+      //Actualizar
+      const billUpdate = bills.map(billState => billState.id === bill.id ? bill : billState)
+      setBills(billUpdate)
+      setBillEdit({})
+    }else{
+      //Nuevo Gasto
+      bill.id = generateId()
+      bill.date = Date.now()
+      setBills([...bills, bill])
+    }
+    
     setAnimationModal(false)
     setModal(false)
   }
@@ -37,10 +45,17 @@ function App() {
   const handleNewSpent = () => {
     setModal(true)
     setBillEdit({})
+
     setTimeout(() => {
       setAnimationModal(true)
     }, 500)
   }
+
+  const deleteBill = id => {
+    const billsUpdate = bills.filter( bill => bill.id !== id )
+    setBills(billsUpdate)
+  }
+
   return (
     <div className={modal ? 'fijar' : ''}>
       <Header budget={budget} setBudget={setBudget} isValidBudget={isValidBudget} setIsValidBudget={setIsValidBudget} bills={bills} />
@@ -49,14 +64,14 @@ function App() {
       {isValidBudget && (
         <>
           <main>
-            <ListBills bills={bills} setBillEdit={setBillEdit} />
+            <ListBills bills={bills} setBillEdit={setBillEdit} deleteBill={deleteBill}/>
           </main>
           <div className='nuevo-gasto'>
             <img src={iconNewSpent} alt="Icono nuevo gasto" onClick={handleNewSpent} />
           </div>
         </>
       )}
-      {modal && <Modal setModal={setModal} animationModal={animationModal} setAnimationModal={setAnimationModal} changeBill={changeBill} billEdit={billEdit} />}
+      {modal && <Modal setModal={setModal} animationModal={animationModal} setAnimationModal={setAnimationModal} changeBill={changeBill} billEdit={billEdit} setBillEdit={setBillEdit}/>}
     </div>
   )
 }

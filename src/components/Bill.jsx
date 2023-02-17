@@ -27,7 +27,7 @@ const dictionaryIcon = {
     suscripciones: IconSuscriptions
 }
 
-const Bill = ({ bill, setBillEdit}) => {
+const Bill = ({ bill, setBillEdit, deleteBill}) => {
     const { category, name, amount, id, date } = bill
 
     const leadingActions = () => ( 
@@ -40,7 +40,7 @@ const Bill = ({ bill, setBillEdit}) => {
 
     const trailingActions = () => (
         <TrailingActions>
-            <SwipeAction onClick={() => console.log("eliminar..")}>
+            <SwipeAction onClick={() => deleteBill(id)} destructive={true}>
                 Eliminar
             </SwipeAction>
         </TrailingActions>
